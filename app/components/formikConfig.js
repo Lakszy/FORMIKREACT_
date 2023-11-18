@@ -1,4 +1,3 @@
-import { useFormik } from "formik";
 import * as Yup from "yup";
 
 const formikConfig ={
@@ -7,6 +6,7 @@ const formikConfig ={
       lastName: "",
       email: "",
       age: "",
+      gender:"",
       agreeToTerms: false,
       appointmentDate: "",
       appointmentTime: "",
@@ -21,7 +21,7 @@ const formikConfig ={
         .max(20, "Must be 20 characters or less")
         .required("Required"),
       email: Yup.string().email("Invalid email address").required("Required"),
-      
+      gender: Yup.string().required("Required"),
       age: Yup.number()
         .max(120,"Should not be greater than 120 years")
         .positive("Age must be a positive number")
